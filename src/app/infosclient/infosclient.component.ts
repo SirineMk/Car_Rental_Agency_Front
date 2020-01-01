@@ -10,22 +10,19 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  
+
 ];
 
-
 @Component({
-  selector: 'app-infos',
-  templateUrl: './infos.component.html',
-  styleUrls: ['./infos.component.css']
+  selector: 'app-infosclient',
+  templateUrl: './infosclient.component.html',
+  styleUrls: ['./infosclient.component.css']
 })
-
-
-export class InfosComponent implements OnInit {
+export class InfosclientComponent implements OnInit {
 
   panelOpenState = false;
   VoiturePop = ELEMENT_DATA;
-  
+
   constructor(private router: Router) { }
 
   ngOnInit() {

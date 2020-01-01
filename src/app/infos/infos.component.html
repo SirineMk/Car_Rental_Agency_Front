@@ -1,3 +1,249 @@
-<p>
-  infos works!
-</p>
+<body>
+    <button mat-button class="nav_but_home" (click) = 'home()'>
+        <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+        <div class="sous_bt" >Accueil</div>
+      </button>
+
+      <div class="example-container">
+      <div class="accord">
+      <mat-accordion  style="width: 70%;">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: teal; font-weight: bold;">
+              Modèle le plus populaire
+            </mat-panel-title>
+            <mat-panel-description>
+              Le modèle qui a été loué le plus de fois
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <table>
+            <tr>
+              <th>Nom Modèle</th>
+              <th style="color: orangered;">Nb locations</th>
+            </tr>
+            <tr>
+              <td>fat7iz</td>
+              <td>10</td>
+            </tr>
+          </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel style="background-color: rgb(243, 239, 239);" (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: rgb(0, 80, 80); font-weight: bold;">
+              Voiture la plus populaire
+            </mat-panel-title>
+            <mat-panel-description>
+              La voiture qui a été louée le plus de fois
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+         <table >
+           <tr>
+             <th>N° châssis</th>
+             <th>N° immat</th>
+             <th>Marque</th>
+             <th>Modèle</th>
+             <th>D.M.C</th>
+             <th>Puissance</th>
+             <th>Nb Cylindres</th>
+             <th>Prix/J</th>
+             <th>Assureur</th>
+             <th>Type Assurance</th>
+             <th>Cotisation</th>
+             <th style="color: orangered;">Nb locations</th>
+           </tr>
+           <tr *ngFor ="let elem of VoiturePop">
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td>{{elem.name}}</td>
+           <td></td>
+           </tr>
+
+         </table>
+            
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: teal; font-weight: bold;">
+              Voiture moins populaire
+            </mat-panel-title>
+            <mat-panel-description>
+              La voiture qui a été louée le moins de fois
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table >
+            <tr>
+              <th>N° châssis</th>
+              <th>N° immat</th>
+              <th>Marque</th>
+              <th>Modèle</th>
+              <th>D.M.C</th>
+              <th>Puissance</th>
+              <th>Nb Cylindres</th>
+              <th>Prix/J</th>
+              <th>Assureur</th>
+              <th>Type Assurance</th>
+              <th>Cotisation</th>
+              <th style="color: orangered;">Nb locations</th>
+            </tr>
+            <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td></td>
+            </tr>
+ 
+          </table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel style="background-color: rgb(243, 239, 239);" (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: rgb(0, 80, 80); font-weight: bold;">
+              Voiture plus rentable
+            </mat-panel-title>
+            <mat-panel-description>
+              La voiture qui fait gagner le plus d'argent
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table >
+            <tr>
+              <th>N° châssis</th>
+              <th>N° immat</th>
+              <th>Marque</th>
+              <th>Modèle</th>
+              <th>D.M.C</th>
+              <th>Puissance</th>
+              <th>Nb Cylindres</th>
+              <th>Prix/J</th>
+              <th>Assureur</th>
+              <th>Type Assurance</th>
+              <th>Cotisation</th>
+              <th style="color: orangered;">Montant tot</th>
+            </tr>
+            <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td></td>
+            </tr>
+ 
+          </table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: teal; font-weight: bold;">
+              Voiture plus accidentée
+            </mat-panel-title>
+            <mat-panel-description>
+              La voiture la plus accidentée
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table >
+            <tr>
+              <th>N° châssis</th>
+              <th>N° immat</th>
+              <th>Marque</th>
+              <th>Modèle</th>
+              <th>D.M.C</th>
+              <th>Puissance</th>
+              <th>Nb Cylindres</th>
+              <th>Prix/J</th>
+              <th>Assureur</th>
+              <th>Type Assurance</th>
+              <th>Cotisation</th>
+              <th style="color: orangered;">Nb accidents</th>
+            </tr>
+            <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td></td>
+            </tr>
+ 
+          </table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel style="background-color: rgb(243, 239, 239);" (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: rgb(0, 80, 80); font-weight: bold;">
+              Voiture plus puissante
+            </mat-panel-title>
+            <mat-panel-description>
+              La voiture la plus puissante
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table >
+            <tr>
+              <th>N° châssis</th>
+              <th>N° immat</th>
+              <th>Marque</th>
+              <th>Modèle</th>
+              <th>D.M.C</th>
+              <th style="color: orangered;">Puissance</th>
+              <th>Nb Cylindres</th>
+              <th>Prix/J</th>
+              <th>Assureur</th>
+              <th>Type Assurance</th>
+              <th>Cotisation</th>
+              
+            </tr>
+            <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            </tr>
+ 
+          </table>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+</div>
+    </div>
+      
+</body>

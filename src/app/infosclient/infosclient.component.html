@@ -1,0 +1,120 @@
+<body>
+<button mat-button class="nav_but_home" (click) = 'home()'>
+  <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+  <div class="sous_bt" >Accueil</div>
+</button>
+
+<div class="example-container">
+  <div class="accord">
+    <mat-accordion  style="width: 70%;">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: teal; font-weight: bold;">
+            Client plus de Locations
+          </mat-panel-title>
+          <mat-panel-description>
+            Le client qui a effectué le plus de locations
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <table >
+          <tr>
+            <th>N° CIN</th>
+            <th>N° permis</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date de Naissance</th>
+            <th>Adresse</th>
+            <th style="color: orangered;">Nb locations</th>
+          </tr>
+          <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+
+            <td></td>
+          </tr>
+
+        </table>
+      </mat-expansion-panel>
+      <mat-expansion-panel style="background-color: rgb(243, 239, 239);" (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: rgb(0, 80, 80); font-weight: bold;">
+            Client plus d'Accidents
+          </mat-panel-title>
+          <mat-panel-description>
+            Le client qui a réalisé le plus d'accidents
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <table >
+          <tr>
+            <th>N° CIN</th>
+            <th>N° permis</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date de Naissance</th>
+            <th>Adresse</th>
+            <th style="color: orangered;">Nb accidents</th>
+          </tr>
+          <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+
+            <td></td>
+          </tr>
+
+        </table>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: teal; font-weight: bold;">
+            Client le plus Fidèle
+          </mat-panel-title>
+          <mat-panel-description>
+              Le client le plus rentable et fidèle
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <table >
+          <tr>
+            <th>N° CIN</th>
+            <th>N° permis</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date de Naissance</th>
+            <th>Adresse</th>
+            <th style="color: orangered;">Montant Total</th>
+          </tr>
+          <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+
+            <td></td>
+          </tr>
+
+        </table>
+      </mat-expansion-panel>
+
+
+
+    </mat-accordion>
+  </div>
+</div>
+
+</body>

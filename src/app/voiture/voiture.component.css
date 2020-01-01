@@ -54,7 +54,7 @@ td .material-icons:hover {
     background-color:white;
     opacity: 0.4;
     position: fixed;
-    top: 5%;
+    top: 14%;
     left: 22%;
     width: 3%;
     height: 3%;
@@ -64,7 +64,7 @@ td .material-icons:hover {
 .nb_tot{
     font-size: large;
     position: fixed;
-  top: 5%;
+  top: 14%;
     margin-left: 5%;
     color: rgb(71, 68, 68);
     font-weight: bold;
@@ -108,13 +108,33 @@ td .material-icons:hover {
    padding-bottom: 3%;
     position: fixed;
     top: 12%;
-    margin-left: 5%;
+    margin-left: 57%;
     height: 4%;
     align-items: center;
     background-color: rgba(148, 165, 165, 0.192);
     box-shadow: 0px 15px 20px rgba(82, 90, 87, 0.4);
 }
 .nav_but_tout:hover{
+    transform: translateY(-3px);
+
+}
+
+.nav_but_home {
+    width: 12%;
+    color: teal;
+    font-size: large;
+    padding-top: 0.2%;
+
+   padding-bottom: 3%;
+    position: fixed;
+    top: 2%;
+    margin-left: 3%;
+    height: 4%;
+    align-items: center;
+    background-color: transparent;
+
+}
+.nav_but_home:hover{
     transform: translateY(-3px);
 
 }

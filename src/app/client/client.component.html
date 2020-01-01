@@ -1,3 +1,87 @@
-<p>
-  client works!
-</p>
+
+
+<body>
+<div class="example-container">
+
+  <button mat-button class="nav_but_home" (click) = 'home()'>
+    <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+    <div class="sous_bt" style="">Accueil</div>
+  </button>
+
+
+  <button mat-button class="nav_but_tout" (click) = 'infos()'>
+    <i class="material-icons" style="color: rgba(107, 114, 114, 0.815); position: absolute; left: 8%; top:18%;">bar_chart</i>
+    <div class="sous_bt" style="">Plus d'informations</div>
+  </button>
+
+  <button mat-button class="nav_but" (click) = 'ajouter()'>
+    <i class="material-icons" style="color: teal; position: absolute; left: 8%; top:18%;">add_box</i>
+    <div class="sous_bt" style="">Ajouter un Client</div>
+  </button>
+
+</div>
+
+<div class="table-div mat-elevation-z8">
+  <form>
+    <table mat-table [dataSource]="dataSource">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="cin">
+        <th mat-header-cell *matHeaderCellDef> N° CIN </th>
+        <td mat-cell *matCellDef="let element"><input mat-cell type="text" value = "{{element.position}}"/> </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="permis">
+        <th mat-header-cell *matHeaderCellDef> N° Permis </th>
+        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.name}}"/> </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.weight}}"/> </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef> Prenom </th>
+        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="birth">
+        <th mat-header-cell *matHeaderCellDef> Date de Naissance </th>
+        <td mat-cell *matCellDef="let element"> <input mat-cell type="calendar" value = ""/> </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="adresse">
+        <th mat-header-cell *matHeaderCellDef> Adresse </th>
+        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="modif">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element" style="width: 9%;">
+          <button class="but_form" type="submit">
+            <i class="material-icons" style="color: green;" (click) = "modifier()">check_circle_outline</i>
+          </button>
+          <button class="but_form" type="submit">
+            <i class="material-icons" style="color: red;" (click) = "delete()">delete</i>
+          </button>
+        </td>
+
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </form>
+  <mat-paginator class="pag" [pageSizeOptions]="[5, 8]" showFirstLastButtons></mat-paginator>
+</div>
+
+</body>

@@ -28,7 +28,9 @@ import {
   MatChipsModule,
   MatTooltipModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatExpansionModule
+
   } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { VoitureComponent } from './voiture/voiture.component';
@@ -40,6 +42,8 @@ import { InfosComponent } from './infos/infos.component';
 import { VoitureaddComponent } from './voitureadd/voitureadd.component';
 import { ClientaddComponent } from './clientadd/clientadd.component';
 import { LocationaddComponent } from './locationadd/locationadd.component';
+import { InfosclientComponent } from './infosclient/infosclient.component';
+import { InfoslocationComponent } from './infoslocation/infoslocation.component';
 
 
 
@@ -48,7 +52,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'voiture', component: VoitureComponent },
   { path: 'client', component: ClientComponent },
-  { path: 'location', component: LocationComponent }
+  { path: 'location', component: LocationComponent },
+  { path: 'infos', component: InfosComponent },
+  { path: 'addcar', component: VoitureaddComponent },
+  { path: 'addclient', component: ClientaddComponent },
+  { path: 'addlocation', component: LocationaddComponent },
+  { path: 'infosclient', component: InfosclientComponent },
+  { path: 'infoslocation', component: InfoslocationComponent }
 ];
 
 @NgModule({
@@ -63,6 +73,8 @@ const routes: Routes = [
     VoitureaddComponent,
     ClientaddComponent,
     LocationaddComponent,
+    InfosclientComponent,
+    InfoslocationComponent,
 
 
   ],
@@ -71,6 +83,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatExpansionModule,
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,

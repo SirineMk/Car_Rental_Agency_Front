@@ -2,7 +2,13 @@
 
 <body>
 <div class="example-container">
-  <div class="nb_tot" >Nombre Totale de voiture: 
+
+  <button mat-button class="nav_but_home" (click) = 'home()'>
+    <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+    <div class="sous_bt" style="">Accueil</div>
+  </button>
+
+  <div class="nb_tot" >Nombre Totale de voiture:
   <div class="nb">{{nb_tot}}</div>
   </div>
 
@@ -21,25 +27,25 @@
   <div class="table-div mat-elevation-z8">
     <form>
     <table mat-table [dataSource]="dataSource">
-      
+
       <!-- Position Column -->
       <ng-container matColumnDef="chassis">
         <th mat-header-cell *matHeaderCellDef> N° châssis </th>
         <td mat-cell *matCellDef="let element"><input mat-cell type="text" value = "{{element.position}}"/> </td>
       </ng-container>
-  
+
       <!-- Name Column -->
       <ng-container matColumnDef="immat">
         <th mat-header-cell *matHeaderCellDef> N° Immat. </th>
         <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.name}}"/> </td>
       </ng-container>
-  
+
       <!-- Weight Column -->
       <ng-container matColumnDef="marque">
         <th mat-header-cell *matHeaderCellDef> Marque </th>
         <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.weight}}"/> </td>
       </ng-container>
-  
+
       <!-- Symbol Column -->
       <ng-container matColumnDef="modele">
         <th mat-header-cell *matHeaderCellDef> Modèle </th>
@@ -57,7 +63,7 @@
         <th mat-header-cell *matHeaderCellDef> Puissance </th>
         <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
       </ng-container>
-  
+
       <!-- Symbol Column -->
       <ng-container matColumnDef="cylindres">
         <th mat-header-cell *matHeaderCellDef> Nb Cylindres </th>
@@ -70,9 +76,9 @@
         <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
       </ng-container>
 
-      
+
       <!-- Symbol Column -->
-     
+
       <ng-container matColumnDef="assureur">
         <th mat-header-cell *matHeaderCellDef> Assureur </th>
         <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
@@ -92,17 +98,17 @@
 
       <ng-container matColumnDef="modif">
         <th mat-header-cell *matHeaderCellDef>  </th>
-        <td mat-cell *matCellDef="let element" style="width: 9%;"> 
+        <td mat-cell *matCellDef="let element" style="width: 9%;">
         <button class="but_form" type="submit">
-          <i class="material-icons" style="color: green;" (click) = "modifier()">check_circle_outline</i>  
+          <i class="material-icons" style="color: green;" (click) = "modifier()">check_circle_outline</i>
         </button>
         <button class="but_form" type="submit">
           <i class="material-icons" style="color: red;" (click) = "delete()">delete</i>
-        </button> 
+        </button>
         </td>
 
       </ng-container>
-    
+
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

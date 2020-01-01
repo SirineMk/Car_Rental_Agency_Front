@@ -27,18 +27,23 @@ export class VoitureComponent implements OnInit {
   }
 
   modifier(): void{
-    console.log("modif");
+    console.log("yep");
+    this.router.navigate(['voiture']);
   }
 
   delete(): void{
-    console.log("del");
+    this.router.navigate(['voiture']);
   }
 
   ajouter(): void{
-    this.router.navigate(['home']);
+    this.router.navigate(['addcar']);
   }
 
   infos(): void{
+    this.router.navigate(['infos']);
+  }
+
+  home(): void{
     this.router.navigate(['home']);
   }
 }

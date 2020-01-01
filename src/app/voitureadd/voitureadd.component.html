@@ -1,3 +1,77 @@
-<p>
-  voitureadd works!
-</p>
+<body>
+  <button mat-button class="nav_but_home" (click) = 'home()'>
+    <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+    <div class="sous_bt" >Accueil</div>
+  </button>
+
+  <div class="example-container">
+    <h1 class="titre">Ajouter une voiture</h1>
+<form>
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 1%; "  >
+      <mat-label style="color: black" >N° châssis</mat-label>
+      <input type="text"  matInput placeholder="exemple: 1, 2, 3 ...">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 1%;">
+      <mat-label style="color: black">N° immatriculation</mat-label>
+      <input type="text" matInput placeholder="exemple: 123 ...">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black">Marque</mat-label>
+      <input type="text" matInput placeholder="exemple: audi, kia">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
+      <mat-label style="color: black">Modèle</mat-label>
+      <input type="text" matInput placeholder="example: modele">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black">Date Mise en Circulation</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
+      <mat-label style="color: black">Puissance</mat-label>
+      <input type="text" matInput placeholder="example: 1, 2, 3 ...">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black">Nb cylindres</mat-label>
+      <input type="number" matInput placeholder="example: 1, 2, 3 ...">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
+      <mat-label style="color: black">Prix</mat-label>
+      <input type="text" matInput placeholder="example: 1000 ...">
+      <span matSuffix>DT</span>
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black">Assureur</mat-label>
+      <input type="text" matInput placeholder="example: foulen">
+
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
+      <mat-label style="color: black">Type Assurance</mat-label>
+      <input type="text" matInput placeholder="example: à vie ...">
+
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black">Cotisation</mat-label>
+      <input type="text" matInput placeholder="example: cotisation">
+
+    </mat-form-field>
+
+  <button mat-button type="submit" class="nav_but" (click) = 'ajouter()'>
+    <i class="material-icons" style="color: #254920; position: absolute; left: 8%; top:18%;">add_box</i>
+    <div class="sous_bt" style="">Ajouter une Voiture</div>
+  </button>
+</form>
+    </div>
+</body>
