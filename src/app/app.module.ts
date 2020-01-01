@@ -3,15 +3,101 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material';
+import {MatInputModule} from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import {MatListModule} from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {
+  MatButtonModule,
+  MatBadgeModule,
+  MatSidenavModule,
+  MatGridListModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatChipsModule,
+  MatTooltipModule,
+  MatTableModule,
+  MatPaginatorModule
+  } from '@angular/material';
+import { HomeComponent } from './home/home.component';
+import { VoitureComponent } from './voiture/voiture.component';
+import { ClientComponent } from './client/client.component';
+import { LocationComponent } from './location/location.component';
+
+import { LayoutModule } from '@angular/cdk/layout';
+import { InfosComponent } from './infos/infos.component';
+import { VoitureaddComponent } from './voitureadd/voitureadd.component';
+import { ClientaddComponent } from './clientadd/clientadd.component';
+import { LocationaddComponent } from './locationadd/locationadd.component';
+
+
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'voiture', component: VoitureComponent },
+  { path: 'client', component: ClientComponent },
+  { path: 'location', component: LocationComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    VoitureComponent,
+    ClientComponent,
+    LocationComponent,
+    InfosComponent,
+    VoitureaddComponent,
+    ClientaddComponent,
+    LocationaddComponent,
+
+
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    FormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+  MatBadgeModule,
+  MatSidenavModule,
+  MatGridListModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatChipsModule,
+  MatTooltipModule,
+  MatTableModule,
+  MatPaginatorModule,
+  FlexLayoutModule,
+  LayoutModule
+
+
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

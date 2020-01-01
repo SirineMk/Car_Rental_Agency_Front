@@ -1,0 +1,124 @@
+html,body{height:100%;margin:0;padding:0;}
+body{
+    background-image:url('../../assets/bk.jpg');
+    background-position:center;background-size:cover;
+    background-repeat:no-repeat;min-height:100vh;
+    font-family:'Comic Sans MS', sans-serif;
+}
+
+
+.table-div {
+    margin-top:12%;
+    position: fixed;
+    margin-left:5%;
+    width:90%;
+    margin-right: 5%;
+    float: center;
+    align: center;
+
+}
+.table-div table {
+    width: 100%;
+    opacity: 0.9;
+}
+.pag {
+    opacity: 0.9;
+}
+
+.example-container {
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(248, 248, 248, 0.123) ;
+    padding-top: 6%;
+    color: black;
+  
+
+}
+.nav {
+    height: 100%;
+    width: 100%;
+}
+input {
+    border: transparent;
+    width: 80%;
+}
+
+td .material-icons:hover {
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.nb{
+    border: transparent;
+    background-color:white;
+    opacity: 0.4;
+    position: fixed;
+    top: 5%;
+    left: 22%;
+    width: 3%;
+    height: 3%;
+    color: rgb(57, 51, 117);
+}
+
+.nb_tot{
+    font-size: large;
+    position: fixed;
+  top: 5%;
+    margin-left: 5%;
+    color: rgb(71, 68, 68);
+    font-weight: bold;
+}
+
+.sous_bt{
+    position: sticky;
+    top:4%;
+}
+
+.nav_but {
+    width: 18%;
+    color: teal;
+    font-size: large;
+    padding-top: 0.2%;
+
+   padding-bottom: 3%;
+    position: fixed;
+    top: 12%;
+    margin-left: 77%;
+    height: 4%;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.603);
+    box-shadow: 0px 15px 20px rgba(82, 90, 87, 0.4);
+}
+
+
+
+
+.nav_but:hover{
+    transform: translateY(-3px);
+
+}
+
+.nav_but_tout {
+    width: 18%;
+    color: rgba(107, 114, 114, 0.815);
+    font-size: large;
+    padding-top: 0.2%;
+
+   padding-bottom: 3%;
+    position: fixed;
+    top: 12%;
+    margin-left: 5%;
+    height: 4%;
+    align-items: center;
+    background-color: rgba(148, 165, 165, 0.192);
+    box-shadow: 0px 15px 20px rgba(82, 90, 87, 0.4);
+}
+.nav_but_tout:hover{
+    transform: translateY(-3px);
+
+}
+.but_form {
+    background-color: transparent;
+    border: transparent;
+}
