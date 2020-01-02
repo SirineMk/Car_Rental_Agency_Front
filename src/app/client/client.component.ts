@@ -16,7 +16,7 @@ export class ClientComponent implements OnInit {
 
 
   // tslint:disable-next-line:max-line-length
-  displayedColumns: string[] = ['cin', 'permis', 'nom', 'prenom', 'birth', 'adresse'];
+  displayedColumns: string[] = ['cin', 'permis', 'nom', 'prenom', 'birth', 'adresse', 'modif'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -26,12 +26,12 @@ export class ClientComponent implements OnInit {
   }
 
   modifier(): void{
-    console.log("yep");
-    this.router.navigate(['voiture']);
+    console.log('yep');
+    this.router.navigate(['client']);
   }
 
   delete(): void{
-    this.router.navigate(['voiture']);
+    this.router.navigate(['client']);
   }
 
   ajouter(): void{

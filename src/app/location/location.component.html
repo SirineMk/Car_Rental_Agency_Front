@@ -1,3 +1,166 @@
-<p>
-  location works!
-</p>
+
+
+<body>
+<div class="example-container">
+
+  <button mat-button class="nav_but_home" (click) = 'home()'>
+    <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+    <div class="sous_bt" style="">Accueil</div>
+  </button>
+
+
+  <button mat-button class="nav_but_tout" (click) = 'infos()'>
+    <i class="material-icons" style="color: rgba(107, 114, 114, 0.815); position: absolute; left: 8%; top:18%;">bar_chart</i>
+    <div class="sous_bt" style="">Plus d'informations</div>
+  </button>
+
+  <button mat-button class="nav_but" (click) = 'ajouter()'>
+    <i class="material-icons" style="color: teal; position: absolute; left: 8%; top:18%;">add_box</i>
+    <div class="sous_bt" style="">Ajouter une location</div>
+  </button>
+
+</div>
+
+<div class="table-div mat-elevation-z8">
+  <form>
+    <table mat-table [dataSource]="dataSource" style="text-align: center;">
+
+      <ng-container matColumnDef="parent0">
+        <th mat-header-cell *matHeaderCellDef colspan="5" style="text-align: center; color: #6d6911; background-color: rgba(206,221,15,0.26);"> Location </th>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #6d6911; background-color: rgba(206,221,15,0.26); "> Id </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(206,221,15,0.26);"><input style="background-color: transparent;" mat-cell disabled type="text" value = "{{element.position}}"/> </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="datedeb" style="border-left-color: black;">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #6d6911; background-color: rgba(206,221,15,0.26); "> Date Début </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(206,221,15,0.26);"> <input style="background-color: transparent; width: 60%" mat-cell [matDatepicker]="picker" placeholder = "1/1/2020"/>
+          <mat-datepicker-toggle matSuffix [for]="picker" style="height: 3px; width: 3px;"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker></td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="datefin">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #6d6911; background-color: rgba(206,221,15,0.26); "> Date Fin </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(206,221,15,0.26);"> <input style="background-color: transparent; width: 60%" mat-cell [matDatepicker]="picker" placeholder = "1/1/2020"/>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker></td>
+      </ng-container>
+
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="promotion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #6d6911; background-color: rgba(206,221,15,0.26); "> Promotion </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(206,221,15,0.26);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.weight}}"/> </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="montant">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #6d6911; background-color: rgba(206,221,15,0.26); "> Montant </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(206,221,15,0.26);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="parent1">
+        <th mat-header-cell *matHeaderCellDef colspan="4" style="text-align: center; color: #254920; background-color: rgba(37,73,32,0.22);"> Voiture </th>
+      </ng-container>
+
+      <ng-container matColumnDef="chassis">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #254920; background-color: rgba(37,73,32,0.22); "> N° châssis </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(37,73,32,0.22);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="immat">
+        <th mat-header-cell *matHeaderCellDef style=" text-align: center; color: #254920; background-color: rgba(37,73,32,0.22);"> N° immat. </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(37,73,32,0.22);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="marque">
+        <th mat-header-cell *matHeaderCellDef style=" text-align: center; color: #254920; background-color: rgba(37,73,32,0.22);"> Marque </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(37,73,32,0.22);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="prix">
+        <th mat-header-cell *matHeaderCellDef style=" text-align: center; color: #254920; background-color: rgba(37,73,32,0.22);"> Prix/J </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(37,73,32,0.22);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="parent2">
+        <th mat-header-cell *matHeaderCellDef colspan="3" style="text-align: center; color: #13376e; background-color: rgba(19,55,110,0.19);"> Client </th>
+      </ng-container>
+
+      <ng-container matColumnDef="cin">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #13376e; background-color: rgba(19,55,110,0.19); "> CIN </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(19,55,110,0.19);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef style=" text-align: center; color: #13376e; background-color: rgba(19,55,110,0.19);"> Nom </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(19,55,110,0.19);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef style=" text-align: center; color: #13376e; background-color: rgba(19,55,110,0.19);"> Prenom </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(19,55,110,0.19);"> <input style="background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="parent3">
+        <th mat-header-cell *matHeaderCellDef colspan="3" style="text-align: center; color: #822d2e; background-color: rgba(130,45,46,0.19);"> Accidents </th>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: #822d2e; width: 8%; background-color: rgba(130,45,46,0.19); "> Date </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(130,45,46,0.19);">
+          <input style="width:80%; margin-bottom: 5px;  background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/>
+          <input style="width:80%; margin-bottom: 5px;  background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lieu">
+        <th mat-header-cell *matHeaderCellDef style=" text-align: center; color: #822d2e; width: 8%; background-color: rgba(130,45,46,0.19);"> Lieu </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(130,45,46,0.19);">
+          <input style="margin-bottom: 5px; background-color:  transparent;" mat-cell type="text" value = "{{element.symbol}}"/>
+          <input style="margin-bottom: 5px; background-color: transparent;" mat-cell type="text" value = "{{element.symbol}}"/>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef style=" text-align: center; color: #822d2e; width: 10%; background-color: rgba(130,45,46,0.19);"> Description </th>
+        <td mat-cell *matCellDef="let element" style="background-color: rgba(130,45,46,0.19);">
+          <input style="margin-bottom: 5px; background-color: transparent;" mat-cell type="textarea" value = "{{element.symbol}}"/>
+          <input style="margin-bottom: 5px; background-color: transparent;" mat-cell type="textarea" value = "{{element.symbol}}"/>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="parent4">
+        <th mat-header-cell *matHeaderCellDef colspan="3" style="text-align: center; "> </th>
+      </ng-container>
+
+      <ng-container matColumnDef="modif">
+        <th mat-header-cell *matHeaderCellDef style="width: 5%">  </th>
+        <td mat-cell *matCellDef="let element" style="width: 8%;">
+          <button class="but_form" type="submit">
+            <i class="material-icons" style="color: green;" (click) = "modifier()">check_circle_outline</i>
+          </button>
+          <button class="but_form" type="submit">
+            <i class="material-icons" style="color: red;" (click) = "delete()">delete</i>
+          </button>
+        </td>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['parent0', 'parent1', 'parent2','parent3', 'parent4']"
+          class="example-second-header-row">
+      </tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </form>
+  <mat-paginator class="pag" [pageSizeOptions]="[2, 4]" showFirstLastButtons></mat-paginator>
+</div>
+
+</body>

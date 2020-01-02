@@ -1,3 +1,134 @@
-<p>
-  infoslocation works!
-</p>
+<body>
+<button mat-button class="nav_but_home" (click) = 'home()'>
+  <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+  <div class="sous_bt" >Accueil</div>
+</button>
+
+<div class="example-container">
+  <div class="accord">
+    <mat-accordion  style="width: 70%;">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: teal; font-weight: bold;">
+            Plus langue période de location
+          </mat-panel-title>
+          <mat-panel-description>
+            PLus langue période de location
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <table >
+          <tr>
+            <th>id</th>
+            <th>Date début</th>
+            <th>Date Fin</th>
+            <th style="color: orangered;">Période</th>
+            <th>montant</th>
+            <th>CIN client</th>
+          </tr>
+          <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+
+
+          </tr>
+
+        </table>
+      </mat-expansion-panel>
+      <mat-expansion-panel style="background-color: rgb(243, 239, 239);" (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: rgb(0, 80, 80); font-weight: bold;">
+            Voitures Disponibles
+          </mat-panel-title>
+          <mat-panel-description>
+            Les voitures qui sont disponibles aujourd'hui
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <table >
+          <tr>
+            <th>N° châssis</th>
+            <th>N° immat</th>
+            <th>Marque</th>
+            <th>Modèle</th>
+            <th>D.M.C</th>
+            <th>Puissance</th>
+            <th>Nb Cylindres</th>
+            <th>Prix/J</th>
+            <th>Assureur</th>
+            <th>Type Assurance</th>
+            <th>Cotisation</th>
+
+          </tr>
+          <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+
+          </tr>
+
+        </table>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: teal; font-weight: bold;">
+            Voitures indisponibles
+          </mat-panel-title>
+          <mat-panel-description>
+            Les voitures indisponibles pour aujourd'hui
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <table >
+          <tr>
+            <th>N° châssis</th>
+            <th>N° immat</th>
+            <th>Marque</th>
+            <th>Modèle</th>
+            <th>D.M.C</th>
+            <th>Puissance</th>
+            <th>Nb Cylindres</th>
+            <th>Prix/J</th>
+            <th>Assureur</th>
+            <th>Type Assurance</th>
+            <th>Cotisation</th>
+            <th style="color: orangered;">Date disponibilité</th>
+          </tr>
+          <tr *ngFor ="let elem of VoiturePop">
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.name}}</td>
+            <td>1/1/2020</td>
+          </tr>
+
+        </table>
+      </mat-expansion-panel>
+
+
+
+    </mat-accordion>
+  </div>
+</div>
+
+</body>

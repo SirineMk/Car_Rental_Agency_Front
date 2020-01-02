@@ -1,3 +1,74 @@
-<p>
-  locationadd works!
-</p>
+<body>
+<button mat-button class="nav_but_home" (click) = 'home()'>
+  <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
+  <div class="sous_bt" >Accueil</div>
+</button>
+
+<div class="example-container">
+  <h1 class="titre">Ajouter une location</h1>
+  <form>
+
+
+    <mat-form-field
+      [hideRequiredMarker]="options.value.hideRequired"
+      [floatLabel]="options.value.floatLabel" class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 5%; ">
+      <mat-select required>
+        <mat-option>-- None --</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+      <mat-label style="color: black" >Voiture</mat-label>
+    </mat-form-field>
+
+
+
+    <mat-form-field
+      [hideRequiredMarker]="options.value.hideRequired"
+      [floatLabel]="options.value.floatLabel" class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 5%; ">
+      <mat-select required>
+        <mat-option>-- None --</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+      <mat-label style="color: black" >Client</mat-label>
+    </mat-form-field>
+
+
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black" >Date début</mat-label>
+      <input matInput [matDatepicker]="picker1" placeholder="choose date" [formControl]="date">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
+      <mat-label style="color: black" >Date fin</mat-label>
+      <input matInput [matDatepicker]="picker2" placeholder="choose date"
+             [formControl]="serializedDate">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black">Promotion</mat-label>
+      <input type="text" matInput placeholder="example: 10% ">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
+      <mat-label style="color: black">Montant</mat-label>
+      <input type="text" matInput placeholder="example: 1000 ">
+      <span matSuffix>DT</span>
+    </mat-form-field>
+
+
+
+    <button mat-button type="submit" class="nav_but" (click) = 'ajouter()'>
+      <i class="material-icons" style="color: #254920; position: absolute; left: 8%; top:18%;">add_box</i>
+      <div class="sous_bt" style="">Louer!!</div>
+    </button>
+  </form>
+</div>
+</body>

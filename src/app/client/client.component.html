@@ -52,8 +52,11 @@
       <!-- Symbol Column -->
       <ng-container matColumnDef="birth">
         <th mat-header-cell *matHeaderCellDef> Date de Naissance </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="calendar" value = ""/> </td>
+        <td mat-cell *matCellDef="let element"> <input mat-cell [matDatepicker]="picker" placeholder = "1/1/2020"/>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker></td>
       </ng-container>
+
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="adresse">
