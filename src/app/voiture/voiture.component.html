@@ -25,96 +25,53 @@
 </div>
 
   <div class="table-div mat-elevation-z8">
-    <form>
-    <table mat-table [dataSource]="dataSource">
+    <table >
+      <tr>
+        <th colspan="8" style="align-content: center;">Informations Voiture</th>
+        <th colspan="3"  style="align-content: center;">Assurance</th>
+      </tr>
+      <tr>
+        <th>N° Immat</th>
+        <th>N° Chassis</th>
+        <th>Modèle</th>
+        <th>Marque</th>
+        <th>D.M.C</th>
+        <th>Puissance</th>
+        <th>Nb Cylindres</th>
+        <th>Prix/J</th>
+        <th>Assureur</th>
+        <th>Type Assurance</th>
+        <th>Cotisation</th>
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="chassis">
-        <th mat-header-cell *matHeaderCellDef> N° châssis </th>
-        <td mat-cell *matCellDef="let element"><input mat-cell type="text" value = "{{element.position}}"/> </td>
-      </ng-container>
+        <th style="width: 9%;"></th>
+      </tr>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="immat">
-        <th mat-header-cell *matHeaderCellDef> N° Immat. </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.name}}"/> </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="marque">
-        <th mat-header-cell *matHeaderCellDef> Marque </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.weight}}"/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="modele">
-        <th mat-header-cell *matHeaderCellDef> Modèle </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.symbol}}"/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="dmc">
-        <th mat-header-cell *matHeaderCellDef> D.M.C </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="puissance">
-        <th mat-header-cell *matHeaderCellDef> Puissance </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="cylindres">
-        <th mat-header-cell *matHeaderCellDef> Nb Cylindres </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="prix">
-        <th mat-header-cell *matHeaderCellDef> Prix/J </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
-
-
-      <!-- Symbol Column -->
-
-      <ng-container matColumnDef="assureur">
-        <th mat-header-cell *matHeaderCellDef> Assureur </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="typeassuance">
-        <th mat-header-cell *matHeaderCellDef> Type Assurance </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="cotisation">
-        <th mat-header-cell *matHeaderCellDef> Cotisation </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
-
-      <ng-container matColumnDef="modif">
-        <th mat-header-cell *matHeaderCellDef>  </th>
-        <td mat-cell *matCellDef="let element" style="width: 9%;">
-        <button class="but_form" type="submit">
-          <i class="material-icons" style="color: green;" (click) = "modifier()">check_circle_outline</i>
-        </button>
-        <button class="but_form" type="submit">
-          <i class="material-icons" style="color: red;" (click) = "delete()">delete</i>
-        </button>
+      <tr *ngFor ="let elem of voitures">
+        <td><input mat-cell   name="immat" disabled [(ngModel)]="elem.immat"  type="text" /></td>
+        <td><input mat-cell   name="numChassis" [(ngModel)]="elem.numChassis"  type="text" value = "{{elem.numChassis}}"/></td>
+        <td><input mat-cell   name="modele" [(ngModel)]="elem.modele"  type="text" value = "{{elem.modele}}"/></td>
+        <td><input mat-cell   name="marque" [(ngModel)]="elem.marque"  type="text" value = "{{elem.marque}}"/></td>
+        <td>
+          <input style="width: 50%;"  name="dmc" [(ngModel)]="elem.dateCirculation" [matDatepicker]="myDatepicker" value = "{{formattedDate(elem.dateCirculation)}}" placeholder="{{formattedDate(elem.dateCirculation)}}">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
         </td>
+        <td><input mat-cell   name="puissance" [(ngModel)]="elem.puissanceFiscale" type="text" value = "{{elem.puissanceFiscale}}"/></td>
+        <td><input mat-cell   name="nbCylindre" [(ngModel)]="elem.nbCylindre" type="text" value = "{{elem.nbCylindre}}"/></td>
+        <td><input mat-cell   name="prix" [(ngModel)]="elem.prix" type="text" value = "{{elem.prix}}"/></td>
+        <td><input mat-cell   name="assureur" [(ngModel)]="elem.assurance.assureur" type="text" value = "{{elem.assurance.assureur}}"/></td>
+        <td><input mat-cell   name="typeassurance" [(ngModel)]="elem.assurance.typeAssurance" type="text" value = "{{elem.assurance.typeAssurance}}"/></td>
+        <td><input mat-cell   name="cotisation" [(ngModel)]="elem.assurance.cotisation" type="text" value = "{{elem.assurance.cotisation}}"/></td>
 
-      </ng-container>
+        <td><button class="but_form" type="submit">
+          <i class="material-icons" style="color: green;" (click) = "modifier(elem)"  >check_circle_outline</i>
+        </button>
+          <button class="but_form" >
+            <i class="material-icons" style="color: red;" (click) = "delete(elem.immat)">delete</i>
+          </button></td>
+      </tr>
 
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  </form>
-    <mat-paginator class="pag" [pageSizeOptions]="[5, 8]" showFirstLastButtons></mat-paginator>
   </div>
 
 </body>

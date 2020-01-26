@@ -6,42 +6,53 @@
 
 <div class="example-container">
   <h1 class="titre">Ajouter un Client</h1>
-  <form>
+  <form  (ngSubmit)="ajouter()">
     <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 5%; "  >
       <mat-label style="color: black" >N° cin</mat-label>
-      <input type="text"  matInput placeholder="exemple: 123456 ">
+      <input type="text" name="ncina" [(ngModel)] = "client.ncin"  matInput placeholder="exemple: 123456 ">
     </mat-form-field>
+
 
     <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 5%;">
       <mat-label style="color: black">N° Permis</mat-label>
-      <input type="text" matInput placeholder="exemple: 123456 ">
+      <input type="text" name="npermisa" [(ngModel)] = "client.npermis" matInput placeholder="exemple: 123456 ">
     </mat-form-field>
 
     <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
       <mat-label style="color: black">Nom</mat-label>
-      <input type="text" matInput placeholder="exemple: foulen">
+      <input type="text" name="noma" [(ngModel)] = "client.nom" matInput placeholder="exemple: foulen">
     </mat-form-field>
 
     <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
       <mat-label style="color: black">Prenom</mat-label>
-      <input type="text" matInput placeholder="example: Ben foulen">
+      <input type="text" name="prenoma" [(ngModel)] = "client.prenom" matInput placeholder="example: Ben foulen">
     </mat-form-field>
 
     <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
       <mat-label style="color: black">Date de Naissance</mat-label>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <input matInput [matDatepicker]="picker" name="datenaissa" [(ngModel)] = "client.dateNaiss" placeholder="Choose a date">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
-      <mat-label style="color: black">Adresse</mat-label>
-      <input type="text" matInput placeholder="example: Rue slou7a ">
+      <mat-label style="color: black">Rue</mat-label>
+      <input type="text" name="ruea" [(ngModel)] = "client.adresse.rue" matInput placeholder="example: Monastir ">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 10%; margin-top: 0.3%;">
+      <mat-label style="color: black">Ville</mat-label>
+      <input type="text" name="villea" [(ngModel)] = "client.adresse.ville" matInput placeholder="example: Monastir ">
+    </mat-form-field>
+
+    <mat-form-field class="f_inp" appearance="outline" style="margin-left: 5%; margin-top: 0.3%;">
+      <mat-label style="color: black">Code Postal</mat-label>
+      <input type="text" name="codePostala" [(ngModel)] = "client.adresse.codePostal" matInput placeholder="example: 5025 ">
     </mat-form-field>
 
 
 
-    <button mat-button type="submit" class="nav_but" (click) = 'ajouter()'>
+    <button mat-button type="submit" class="nav_but" (click) = "ajouter()">
       <i class="material-icons" style="color: #254920; position: absolute; left: 8%; top:18%;">add_box</i>
       <div class="sous_bt" style="">Ajouter un Client</div>
     </button>

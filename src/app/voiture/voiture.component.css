@@ -15,6 +15,7 @@ body{
     margin-right: 5%;
     float: center;
     align: center;
+  overflow-y: auto;
 
 }
 .table-div table {
@@ -32,7 +33,7 @@ body{
     background-color: rgba(248, 248, 248, 0.123) ;
     padding-top: 6%;
     color: black;
-  
+
 
 }
 .nav {
@@ -141,4 +142,24 @@ td .material-icons:hover {
 .but_form {
     background-color: transparent;
     border: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.78);
+}
+th {
+  color: rgba(106, 127, 128, 0.98);
+  font-size: small;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+td input {
+  border: transparent;
+  background-color: transparent;
+  width: 80%;
 }

@@ -3,6 +3,7 @@
 <body>
 <div class="example-container">
 
+
   <button mat-button class="nav_but_home" (click) = 'home()'>
     <i class="material-icons" style="color:teal; position: absolute; left: 15%; top:17%;">home</i>
     <div class="sous_bt" style="">Accueil</div>
@@ -22,69 +23,46 @@
 </div>
 
 <div class="table-div mat-elevation-z8">
-  <form>
-    <table mat-table [dataSource]="dataSource">
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="cin">
-        <th mat-header-cell *matHeaderCellDef> N° CIN </th>
-        <td mat-cell *matCellDef="let element"><input mat-cell type="text" value = "{{element.position}}"/> </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="permis">
-        <th mat-header-cell *matHeaderCellDef> N° Permis </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.name}}"/> </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="nom">
-        <th mat-header-cell *matHeaderCellDef> Nom </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.weight}}"/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="prenom">
-        <th mat-header-cell *matHeaderCellDef> Prenom </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = "{{element.symbol}}"/> </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="birth">
-        <th mat-header-cell *matHeaderCellDef> Date de Naissance </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell [matDatepicker]="picker" placeholder = "1/1/2020"/>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker></td>
-      </ng-container>
 
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="adresse">
-        <th mat-header-cell *matHeaderCellDef> Adresse </th>
-        <td mat-cell *matCellDef="let element"> <input mat-cell type="text" value = ""/> </td>
-      </ng-container>
+  <table >
+    <tr>
+      <th>N° CIN</th>
+      <th>N° permis</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date de Naissance</th>
+      <th>Rue</th>
+      <th>Ville</th>
+      <th >Code Postal</th>
+      <th style="width: 9%;"></th>
+    </tr>
+
+    <tr *ngFor ="let elem of clients">
+      <td><input mat-cell   name="cin" disabled [(ngModel)]="elem.ncin"  type="text" /></td>
+      <td><input mat-cell   name="npermis" [(ngModel)]="elem.npermis"  type="text" value = "{{elem.npermis}}"/></td>
+      <td><input mat-cell   name="nom" [(ngModel)]="elem.nom"  type="text" value = "{{elem.nom}}"/></td>
+      <td><input mat-cell   name="prenom" [(ngModel)]="elem.prenom" type="text" value = "{{elem.prenom}}"/></td>
+ <td>
+      <input style="width: 50%;"  name="datenaiss" [(ngModel)]="elem.dateNaiss" [matDatepicker]="myDatepicker" value = "{{formattedDate(elem.dateNaiss)}}" placeholder="{{formattedDate(elem.dateNaiss)}}">
+   <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+   <mat-datepicker #myDatepicker></mat-datepicker>
+      </td>
+      <td><input mat-cell   name="rue" [(ngModel)]="elem.adresse.rue" type="text" value = "{{elem.adresse.rue}}"/></td>
+      <td><input mat-cell   name="ville" [(ngModel)]="elem.adresse.ville" type="text" value = "{{elem.adresse.ville}}"/></td>
+      <td><input mat-cell   name="codep" [(ngModel)]="elem.adresse.codePostal" type="text" value = "{{elem.adresse.codePostal}}"/></td>
+
+      <td><button class="but_form" type="submit">
+        <i class="material-icons" style="color: green;" (click) = "modifier(elem)"  >check_circle_outline</i>
+      </button>
+        <button class="but_form" >
+          <i class="material-icons" style="color: red;" (click) = "delete(elem.ncin)">delete</i>
+        </button></td>
+    </tr>
+
+  </table>
 
 
-
-      <ng-container matColumnDef="modif">
-        <th mat-header-cell *matHeaderCellDef>  </th>
-        <td mat-cell *matCellDef="let element" style="width: 9%;">
-          <button class="but_form" type="submit">
-            <i class="material-icons" style="color: green;" (click) = "modifier()">check_circle_outline</i>
-          </button>
-          <button class="but_form" type="submit">
-            <i class="material-icons" style="color: red;" (click) = "delete()">delete</i>
-          </button>
-        </td>
-
-      </ng-container>
-
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </form>
-  <mat-paginator class="pag" [pageSizeOptions]="[5, 8]" showFirstLastButtons></mat-paginator>
 </div>
 
 </body>

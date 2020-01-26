@@ -36,6 +36,8 @@ import { HomeComponent } from './home/home.component';
 import { VoitureComponent } from './voiture/voiture.component';
 import { ClientComponent } from './client/client.component';
 import { LocationComponent } from './location/location.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { InfosComponent } from './infos/infos.component';
@@ -44,6 +46,8 @@ import { ClientaddComponent } from './clientadd/clientadd.component';
 import { LocationaddComponent } from './locationadd/locationadd.component';
 import { InfosclientComponent } from './infosclient/infosclient.component';
 import { InfoslocationComponent } from './infoslocation/infoslocation.component';
+import { ClientService } from './services/client.service';
+import { VoitureService } from './services/voiture.service';
 
 
 
@@ -80,6 +84,8 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes),
+    HttpClientModule,
+    HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -111,7 +117,7 @@ const routes: Routes = [
 
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [ClientService, VoitureService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
